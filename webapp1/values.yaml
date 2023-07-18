@@ -1,0 +1,11 @@
+appName: myhelmapp2
+podName: myhelmpod2
+serviceName: myhelmservice2
+namespace: default
+configmap: 
+  name: helmappconfigmapv1.5
+  data: 
+    CUSTOM_HEADER: "This app is helm~~"
+image:
+  name: tftaksdemo.azurecr.io/demoapp
+  tag: latest

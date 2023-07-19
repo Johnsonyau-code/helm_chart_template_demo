@@ -1,0 +1,11 @@
+servicename=$(kubectl get service -l "app={{ .Values.appName }}" -o jsonpath="{.items[0].metadata.name}")
+kubectl --namespace {{ .Values.namespace}} port-forward service/{{ .Values.appName }} 8888:80
+
+
+helm install  mywebapp-release webapp1/ --values webapp1/values.yaml 
+helm install  mywebapp-release webapp1/ --values webapp1/values.yaml -f webapp1/values-dev.yaml -n dev
+helm install  mywebapp-release webapp1/ --values webapp1/values.yaml -f webapp1/values-prod.yaml -n prod
+
+helm upgrade  mywebapp-release webapp1/ --values webapp1/values.yaml 
+helm upgrade  mywebapp-release webapp1/ --values webapp1/values.yaml -f webapp1/values-dev.yaml -n dev
+helm upgrade  mywebapp-release webapp1/ --values webapp1/values.yaml -f webapp1/values-prod.yaml -n prod

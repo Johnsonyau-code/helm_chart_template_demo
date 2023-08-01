@@ -10,6 +10,6 @@ spec:
   ports:
   - port: 80
     targetPort: web
-    NodePort: 30030
+    nodePort: 30030
   selector:
     service:  {{.Values.appName}}

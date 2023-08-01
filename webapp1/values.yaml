@@ -7,5 +7,5 @@ configmap:
   data: 
     CUSTOM_HEADER: "This app is helm~~"
 image:
-  name: tftaksdemo.azurecr.io/demoapp
+  name: tftaksdemo2.azurecr.io/demoapp
   tag: latest
